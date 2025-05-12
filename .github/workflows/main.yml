@@ -53,7 +53,7 @@ jobs:
           sONAR_HOST_URL: ${{ secrets.SONAR_URL}}
 
 
-  build and publish:
+  build_and_publish:
     needs: testing
     runs-on: ubuntu-latest
     steps: 
