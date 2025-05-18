@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: funmike.co.uk
+  - host: www.funmike.co.uk
     http:
       paths:
       - path: /
