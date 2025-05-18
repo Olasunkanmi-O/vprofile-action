@@ -91,19 +91,14 @@ jobs:
       - name: Get kube cofig file
         run: aws eks update-kubeconfig --region ${{ env.AWS_REGION }} --name ${{ env.EKS_CLUSTER }}
 
-      - name: Debug registry value
-        run: echo "Registry is set"
-        env:
-          REGISTRY: ${{ secrets.REGISTRY }}
-
       - name: login to amazon ECR
         run: | 
+          PASSWORD=$(aws ecr get-login-password)
           kubectl delete secret regcred --ignore-not-found
-          kubectl create secret docker-registry regcred \
           kubectl create secret docker-registry regcred \
             --docker-server=${{ secrets.REGISTRY }} \
             --docker-username=AWS \
-            --docker-password=$(aws ecr get-login-password)
+            --docker-password='$PASSWORD'
 
       - name: Deploy Helm
         uses: bitovi/github-actions-deploy-eks-helm@v1.2.12
