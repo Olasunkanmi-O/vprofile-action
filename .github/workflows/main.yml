@@ -39,12 +39,7 @@ jobs:
                 -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
                 -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/  
             
-            - name: SonarQube Scan
-              uses: sonarsource/sonarqube-scan-action@master
-              env:
-                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-                SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
-
+            
             - name: Wait for SonarQube Quality Gate result
               uses: sonarsource/sonarqube-quality-gate-action@master
               id: sonarqube-quality-gate
