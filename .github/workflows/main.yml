@@ -38,7 +38,21 @@ jobs:
                 -Dsonar.jacoco.reportsPath=target/jacoco.exec 
                 -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
                 -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/  
-                        
+            
+            - name: SonarQube Scan
+              uses: sonarsource/sonarqube-scan-action@master
+              env:
+                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+                SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
+
+            - name: Wait for SonarQube Quality Gate result
+              uses: sonarsource/sonarqube-quality-gate-action@master
+              id: sonarqube-quality-gate
+              env:
+                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+                SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
+    
+                
             - name: sonarQube quality gate check
               id: sonarqube-quality-gate-check
               uses: sonarsource/sonarqube-quality-gate-action@master
