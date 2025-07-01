@@ -29,13 +29,12 @@ Then look for the file :
 
 | Tool                  | Purpose                                      |
 |-----------------------|----------------------------------------------|
-| **Maven**             | Build and dependency management              |
-| **Checkstyle**        | Code linting and formatting                  |
+| **Maven (Checkstyle)**| Code linting and formatting only             |
 | **SonarCloud**        | Static code analysis and quality gate        |
-| **Docker**            | Containerization of the application          |
+| **Docker**            | Compiling and containerizing the Java app    |
 | **Amazon ECR**        | Hosting of container images                  |
-| **Helm**              | Kubernetes deployment templating             |
-| **GitHub Actions**    | CI/CD pipeline (build, test, deploy)         |
+| **Helm**              | Kubernetes deployment templating              |
+| **GitHub Actions**    | CI/CD pipeline (lint, scan, build, deploy)   |
 | **Amazon EKS**        | Kubernetes cluster to run the application    |
 
 ---
@@ -71,6 +70,7 @@ Then look for the file :
   ![](/img/workflow.png)
 
 2. Create your workflow and set your environment variables. For this testing phase, I used a manual trigger
+sample workflow [here](.github\workflows\main.yml)
 
   ```yaml
   name: vprofile actions
@@ -82,17 +82,9 @@ Then look for the file :
 
   ```
 3. Confirm through the github actions tab of your repository
+![](/img/manual.png)
+![](/img/app-workflow.png)
 
-## Safe Deployment Practice
-To prevent accidental infrastructure changes, the `terraform apply` step in your workflow is gated:
-- Only runs after merging changes from `stage` → `main`.
-- Ensures changes are peer-reviewed before affecting real infrastructure.
 
-![](/img/apply.png)
-
-## confirm infrastructure build
-![](/img/eks-cluster.png)
-![](/img/node-grps.png)
-![](/img/nodes.png)
 
 
