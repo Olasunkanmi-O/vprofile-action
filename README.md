@@ -47,7 +47,7 @@ Then look for the file :
 3. create an ECR repo and store the URI as a Github secret
 
 ### SonarQube Setup
-1. log into [sonarcloud](sonarcloud.io)  
+1. log into [sonarcloud](https://www.sonarcloud.io)  
 2. generate a token to be used to authenticate your Github account
 2. create a new organization and store the key as a Github secret
 3. set up the sonargate for the project
