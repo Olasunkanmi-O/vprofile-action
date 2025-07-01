@@ -47,18 +47,18 @@ Then look for the file :
 3. create an ECR repo and store the URI as a Github secret
 
 ### SonarQube Setup
-1. log into [`sonarcloud.io`]()  
+1. log into [sonarcloud.io]()  
 2. generate a token to be used to authenticate your Github account
 2. create a new organization and store the key as a Github secret
 3. set up the sonargate for the project
 
-## Gihub Secrets
+## Github Secrets
 | Secret Name | Description |
 | --- | --- |
 | `AWS_ACCESS_KEY_ID` | IAM user access key ID |
 | `AWS_SECRET_ACCESS_KEY` | IAM user secret access key |
-| `REGISTRY` | name of your ECR repo |
-| `SONAR_ORGANIZATION` | your organization's name |
+| `REGISTRY` | uri of your ECR repo |
+| `SONAR_ORGANIZATION` | your sonar organization's name |
 | `SONAR_PROJECT_KEY` | key to your organization |
 | `SONAR_TOKEN` | token for authentication |
 | `SONAR_URL` | url of the sonar-cloud |
@@ -70,7 +70,7 @@ Then look for the file :
   ![](/img/workflow.png)
 
 2. Create your workflow and set your environment variables. For this testing phase, I used a manual trigger
-sample workflow [here](.github\workflows\main.yml)
+sample workflow [here](/files/main.yml)
 
   ```yaml
   name: vprofile actions
