@@ -24,14 +24,14 @@ Then look for the file :
 
 ---
 ## Architectural diagram
-![](/img/architectural%20setup.png)
+![](/img/app-deploy.drawio.png)
 
 
 ##  Tech Stack Overview
 
 | Tool                  | Purpose                                      |
 |-----------------------|----------------------------------------------|
-| **Maven (Checkstyle)**| Code linting and formatting only             |
+| **Maven (Checkstyle)**| Code linting and formatting              |
 | **SonarCloud**        | Static code analysis and quality gate        |
 | **Docker**            | Compiling and containerizing the Java app    |
 | **Amazon ECR**        | Hosting of container images                  |
