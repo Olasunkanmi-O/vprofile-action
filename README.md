@@ -1,6 +1,6 @@
 #  VProfile Application – CI/CD with Maven, Sonar, Docker, ECR & Helm (GitOps Workflow)
 
-This repository contains the source code and CI/CD pipeline for the **VProfile Java application**, built using Maven, tested with SonarCloud, containerized using Docker, and deployed to **Amazon EKS** using **Helm** charts and a GitOps workflow.
+This repository contains the source code and CI/CD pipeline for the **Vprofile Java application**,(which I forked off an open source repo) built using Maven, tested with SonarCloud, containerized using Docker, and deployed to **Amazon EKS** using **Helm** charts and a GitOps workflow.
 
 ---
 
