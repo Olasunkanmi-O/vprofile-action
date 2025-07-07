@@ -25,7 +25,7 @@ Then look for the file :
 ---
 ## Architectural diagram
 ![](/img/app-deploy.drawio.png)
-**NB: Please use this [link](https://github.com/Olasunkanmi-O/vprofile-action/raw/main/img/architectural%20setup.png) to view the other detailed diagram of the infrastructure
+*NB: Please use this [link](https://github.com/Olasunkanmi-O/vprofile-action/raw/main/img/architectural%20setup.png) to view the other detailed diagram of the infrastructure*
 
 ##  Tech Stack Overview
 
